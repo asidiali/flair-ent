@@ -1,5 +1,5 @@
 {
-  "name": "Flair Entertainment",
+  "name": "flair-entertainment",
   "version": "0.1.0",
   "description": "A boilerplate front-end using React, ES7 & Webpack",
   "main": "./src/core/app.js",
