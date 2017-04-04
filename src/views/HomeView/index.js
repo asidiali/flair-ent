@@ -42,7 +42,7 @@ class HomeView extends React.Component {
             <div style={{ flex: 1, padding: 40, boxSizing: 'border-box', display: 'flex', flexFlow: 'column nowrap', '@media (max-width: 600px)': { order:10, padding: 20 }}}>
               <h2 style={styles.bioTitle}>
                 <i className="fa fa-music" />&nbsp;
-                Master of Ceremony
+                Master of Ceremonies
               </h2>
               <span style={styles.bioTitleSpan} />
               <p style={styles.bioText}>As a professional DJ and MC with over 7 years experience, the biggest lesson I've learned, when it comes to work the key is to have FUN! Everybody needs to break the monotony every once in a while and spice up their lives. With a customer-first mentality and a desire to exceed expectation, Flair Entertainment is ready to do just that for you and more. Does your company Christmas party need some holiday cheer? No problem. DJ cancel on you last minute for a school dance? I've got you covered. Are you a bride and groom needing that charismatic host for your wedding? That's my specialty.</p>

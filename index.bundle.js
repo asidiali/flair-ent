@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aca591d6d12faadd7558"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "719f1f2422db7d263af2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33561,7 +33561,7 @@
 	                  'h2',
 	                  { style: _styles2['default'].bioTitle },
 	                  _react2['default'].createElement('i', { className: 'fa fa-music' }),
-	                  '\xA0 Master of Ceremony'
+	                  '\xA0 Master of Ceremonies'
 	                ),
 	                _react2['default'].createElement('span', { style: _styles2['default'].bioTitleSpan }),
 	                _react2['default'].createElement(
