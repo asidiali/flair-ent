@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7be7b2b40c4bad8e961b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9e2c42dc359b31af54a6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33638,7 +33638,10 @@
 	                  style: {
 	                    display: 'flex',
 	                    flexFlow: 'row wrap',
-	                    padding: '0'
+	                    padding: '0',
+	                    '@media (max-width: 600px)': {
+	                      flexFlow: 'column nowrap'
+	                    }
 	                  }
 	                },
 	                this.state.services.length ? this.state.services.map(function (service, sI) {
@@ -33649,11 +33652,15 @@
 	                        width: service.width + '%',
 	                        margin: '0',
 	                        background: '#' + (sI + 1) + (sI + 1) + (sI + 1),
-	                        borderRadius: 2,
+	                        bomderRadius: 2,
 	                        minHeight: 400,
 	                        padding: 40,
 	                        display: 'flex',
-	                        flexFlow: 'column nowrap'
+	                        flexFlow: 'column nowrap',
+	                        '@media (max-width: 600px)': {
+	                          width: '100%',
+	                          padding: 20
+	                        }
 	                      } },
 	                    _react2['default'].createElement(
 	                      'span',
@@ -33665,6 +33672,8 @@
 	                          margin: '0 auto 20px 0'
 	                        }
 	                      },
+	                      _react2['default'].createElement('i', { className: 'fa fa-bookmark-o' }),
+	                      '\xA0\xA0',
 	                      service.name
 	                    ),
 	                    _react2['default'].createElement(

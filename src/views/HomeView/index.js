@@ -98,6 +98,9 @@ class HomeView extends React.Component {
                 display: 'flex',
                 flexFlow: 'row wrap',
                 padding: '0',
+                '@media (max-width: 600px)': {
+                  flexFlow: 'column nowrap',
+                }
               }}
             >
               {this.state.services.length ? this.state.services.map((service, sI) => (
@@ -106,11 +109,15 @@ class HomeView extends React.Component {
                   width: `${service.width}%`,
                   margin: '0',
                   background: `#${sI+1}${sI+1}${sI+1}`,
-                  borderRadius: 2,
+                  bomderRadius: 2,
                   minHeight: 400,
                   padding: 40,
                   display: 'flex',
                   flexFlow: 'column nowrap',
+                  '@media (max-width: 600px)': {
+                    width: '100%',
+                    padding: 20,
+                  }
                 }}>
                   <span style={{
                     color: '#fff',
@@ -120,6 +127,7 @@ class HomeView extends React.Component {
                     margin: '0 auto 20px 0',
                     }}
                   >
+                    <i className="fa fa-bookmark-o" />&nbsp;&nbsp;
                     {service.name}
                   </span>
                   <p style={{
