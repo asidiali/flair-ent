@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0de8b88a680092bcb70a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aca591d6d12faadd7558"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33510,7 +33510,7 @@
 	              'div',
 	              { style: _styles2['default'].banner },
 	              _react2['default'].createElement('img', {
-	                src: '/static/logo.png',
+	                src: 'https://raw.githubusercontent.com/asidiali/flair-ent/master/static/logo.png',
 	                style: _styles2['default'].bannerLogo
 	              })
 	            ),
@@ -33518,7 +33518,7 @@
 	              'nav',
 	              { style: _styles2['default'].navbar },
 	              _react2['default'].createElement('img', {
-	                src: '/static/logo-2.png',
+	                src: 'https://raw.githubusercontent.com/asidiali/flair-ent/master/static/logo-2.png',
 	                style: _styles2['default'].navbarLogo
 	              }),
 	              _react2['default'].createElement(
@@ -33747,7 +33747,7 @@
 	    }
 	  },
 	  bioImage: {
-	    background: 'url(/static/caner.png) no-repeat center top scroll',
+	    background: 'url(https://raw.githubusercontent.com/asidiali/flair-ent/master/static/caner.png) no-repeat center top scroll',
 	    backgroundSize: 'cover',
 	    flex: 1,
 	    width: '50vw',

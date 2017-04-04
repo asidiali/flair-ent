@@ -92,7 +92,7 @@ export default {
      }
   },
   bioImage: {
-    background: 'url(/static/caner.png) no-repeat center top scroll',
+    background: 'url(https://raw.githubusercontent.com/asidiali/flair-ent/master/static/caner.png) no-repeat center top scroll',
     backgroundSize: 'cover',
     flex: 1,
     width: '50vw',

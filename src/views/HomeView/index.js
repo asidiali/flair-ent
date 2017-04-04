@@ -9,13 +9,13 @@ class HomeView extends React.Component {
         <div>
           <div style={styles.banner}>
             <img
-              src="/static/logo.png"
+              src="https://raw.githubusercontent.com/asidiali/flair-ent/master/static/logo.png"
               style={styles.bannerLogo}
             />
           </div>
           <nav style={styles.navbar}>
             <img
-              src="/static/logo-2.png"
+              src="https://raw.githubusercontent.com/asidiali/flair-ent/master/static/logo-2.png"
               style={styles.navbarLogo}
             />
             <span style={styles.subNavbarItem}>
