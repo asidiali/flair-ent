@@ -89,7 +89,10 @@ class HomeView extends React.Component {
             </div>
           </div>
           <div style={styles.servicesWrapper}>
-            <h2 style={styles.servicesTitle}>Available Services</h2>
+            <h2 style={styles.servicesTitle}>
+              <i className="fa fa-briefcase" />&nbsp;
+              Available Services
+            </h2>
             <div
               style={{
                 display: 'flex',

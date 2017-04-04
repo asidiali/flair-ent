@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bbdd7de74eca602e99a4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7be7b2b40c4bad8e961b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33629,7 +33629,8 @@
 	              _react2['default'].createElement(
 	                'h2',
 	                { style: _styles2['default'].servicesTitle },
-	                'Available Services'
+	                _react2['default'].createElement('i', { className: 'fa fa-briefcase' }),
+	                '\xA0 Available Services'
 	              ),
 	              _react2['default'].createElement(
 	                'div',
