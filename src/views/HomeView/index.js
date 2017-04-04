@@ -130,6 +130,15 @@ class HomeView extends React.Component {
                     <i className="fa fa-bookmark-o" />&nbsp;&nbsp;
                     {service.name}
                   </span>
+                  <span style={{
+                      color: '#aaa',
+                      fontSize: '1.25em',
+                      letterSpacing: 2,
+                      textTransform: 'uppercase',
+                      fontWeight: 700
+                    }}>
+                    {service.duration}h // ${service.price}
+                  </span>
                   <p style={{
                     color: '#eee',
                     fontSize: '0.9em',

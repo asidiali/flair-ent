@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9e2c42dc359b31af54a6"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0b2a9123eea4fc0378ef"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33675,6 +33675,19 @@
 	                      _react2['default'].createElement('i', { className: 'fa fa-bookmark-o' }),
 	                      '\xA0\xA0',
 	                      service.name
+	                    ),
+	                    _react2['default'].createElement(
+	                      'span',
+	                      { style: {
+	                          color: '#aaa',
+	                          fontSize: '1.25em',
+	                          letterSpacing: 2,
+	                          textTransform: 'uppercase',
+	                          fontWeight: 700
+	                        } },
+	                      service.duration,
+	                      'h // $',
+	                      service.price
 	                    ),
 	                    _react2['default'].createElement(
 	                      'p',
