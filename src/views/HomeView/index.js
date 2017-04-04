@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 import React from 'react';
 import radium from 'radium';
 import styles from './styles';
