@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "719f1f2422db7d263af2"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bbdd7de74eca602e99a4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -33459,7 +33459,7 @@
 /* 542 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(console) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -33491,12 +33491,54 @@
 	  _inherits(HomeView, _React$Component);
 
 	  function HomeView() {
+	    var _ref;
+
+	    var _temp, _this, _ret;
+
 	    _classCallCheck(this, HomeView);
 
-	    return _possibleConstructorReturn(this, (HomeView.__proto__ || Object.getPrototypeOf(HomeView)).apply(this, arguments));
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
+
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = HomeView.__proto__ || Object.getPrototypeOf(HomeView)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	      services: []
+	    }, _this.fetchServices = function () {
+	      fetch('https://spreadsheets.google.com/feeds/list/1_FcnNMbNktqead1o-B47VkjL0z9ePnf4mMv4DwiFnoY/1/public/values?alt=json', {
+	        method: 'GET',
+	        mode: 'CORS'
+	      }).then(function (res) {
+	        return res.json();
+	      }).then(function (res) {
+	        var data = res.feed.entry;
+	        var arr = data.map(function (cell) {
+	          var record = {
+	            name: cell.gsx$name.$t,
+	            description: cell.gsx$description.$t,
+	            type: cell.gsx$type.$t,
+	            price: cell.gsx$price.$t,
+	            duration: cell.gsx$duration.$t,
+	            width: '' + cell.gsx$width.$t
+	          };
+	          return record;
+	        });
+	        _this.setState({ services: arr });
+	      })['catch'](function (err) {
+	        return console.log(err);
+	      });
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(HomeView, [{
+	    key: 'componentDidMount',
+	    value: function () {
+	      function componentDidMount() {
+	        this.fetchServices();
+	      }
+
+	      return componentDidMount;
+	    }()
+	  }, {
 	    key: 'render',
 	    value: function () {
 	      function render() {
@@ -33556,7 +33598,7 @@
 	              { style: _styles2['default'].bioWrapper },
 	              _react2['default'].createElement(
 	                'div',
-	                { style: { flex: 1, padding: 40, boxSizing: 'border-box', display: 'flex', flexFlow: 'column nowrap', '@media (max-width: 600px)': { order: 10, padding: 20 } } },
+	                { style: { flex: 1, padding: 40, boxSizing: 'border-box', display: 'flex', flexFlow: 'column nowrap', '@media (max-width: 600px)': { order: 10, padding: '40px 20px' } } },
 	                _react2['default'].createElement(
 	                  'h2',
 	                  { style: _styles2['default'].bioTitle },
@@ -33589,12 +33631,55 @@
 	                { style: _styles2['default'].servicesTitle },
 	                'Available Services'
 	              ),
-	              _react2['default'].createElement('div', {
-	                style: {
-	                  display: 'flex',
-	                  flexFlow: 'row wrap'
-	                }
-	              })
+	              _react2['default'].createElement(
+	                'div',
+	                {
+	                  style: {
+	                    display: 'flex',
+	                    flexFlow: 'row wrap',
+	                    padding: '0'
+	                  }
+	                },
+	                this.state.services.length ? this.state.services.map(function (service, sI) {
+	                  return _react2['default'].createElement(
+	                    'div',
+	                    { key: 'services-box-' + sI, style: {
+	                        flex: '0 0 auto',
+	                        width: service.width + '%',
+	                        margin: '0',
+	                        background: '#' + (sI + 1) + (sI + 1) + (sI + 1),
+	                        borderRadius: 2,
+	                        minHeight: 400,
+	                        padding: 40,
+	                        display: 'flex',
+	                        flexFlow: 'column nowrap'
+	                      } },
+	                    _react2['default'].createElement(
+	                      'span',
+	                      { style: {
+	                          color: '#fff',
+	                          fontWeight: '700',
+	                          textTransform: 'uppercase',
+	                          fontSize: '1.75em',
+	                          margin: '0 auto 20px 0'
+	                        }
+	                      },
+	                      service.name
+	                    ),
+	                    _react2['default'].createElement(
+	                      'p',
+	                      { style: {
+	                          color: '#eee',
+	                          fontSize: '0.9em',
+	                          fontWeight: 300,
+	                          maxWidth: 800,
+	                          margin: 'auto auto 0 0'
+	                        } },
+	                      service.description
+	                    )
+	                  );
+	                }) : false
+	              )
 	            )
 	          ),
 	          _react2['default'].createElement('footer', null)
@@ -33636,7 +33721,7 @@
 	}];
 	;
 
-	var _temp = function () {
+	var _temp2 = function () {
 	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
 	    return;
 	  }
@@ -33649,6 +33734,7 @@
 	}();
 
 	;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
 /* 543 */
@@ -33690,18 +33776,22 @@
 	    display: 'none'
 	  },
 	  navbarItem: {
-	    margin: 'auto 15px',
+	    margin: 'auto 20px',
 	    color: '#444',
 	    fontSize: '0.9em',
 	    fontWeight: 700,
 	    letterSpacing: 2
 	  },
 	  subNavbarItem: {
-	    margin: 'auto 10px',
+	    margin: 'auto 20px',
 	    color: '#888',
 	    fontSize: '0.85em',
 	    fontWeight: 300,
-	    letterSpacing: 1
+	    letterSpacing: 1,
+	    '@media (max-width: 600px)': {
+	      fontSize: '0.8em',
+	      margin: 'auto 15px'
+	    }
 	  },
 	  shoutout: {
 	    background: '#000',

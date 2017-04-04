@@ -2,6 +2,42 @@ import React from 'react';
 import radium from 'radium';
 import styles from './styles';
 class HomeView extends React.Component {
+
+  state = {
+    services: [],
+  }
+
+  componentDidMount() {
+    this.fetchServices();
+  }
+
+  fetchServices = () => {
+    fetch(
+      'https://spreadsheets.google.com/feeds/list/1_FcnNMbNktqead1o-B47VkjL0z9ePnf4mMv4DwiFnoY/1/public/values?alt=json',
+      {
+        method: 'GET',
+        mode: 'CORS',
+      }
+    )
+      .then(res => res.json())
+      .then((res) => {
+        const data = res.feed.entry;
+        const arr = data.map((cell) => {
+          const record = {
+            name: cell.gsx$name.$t,
+            description: cell.gsx$description.$t,
+            type: cell.gsx$type.$t,
+            price: cell.gsx$price.$t,
+            duration: cell.gsx$duration.$t,
+            width: `${cell.gsx$width.$t}`
+          };
+          return record;
+        });
+        this.setState({ services: arr });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div style={styles.base}>
@@ -39,7 +75,7 @@ class HomeView extends React.Component {
             </span>
           </div>
           <div style={styles.bioWrapper}>
-            <div style={{ flex: 1, padding: 40, boxSizing: 'border-box', display: 'flex', flexFlow: 'column nowrap', '@media (max-width: 600px)': { order:10, padding: 20 }}}>
+            <div style={{ flex: 1, padding: 40, boxSizing: 'border-box', display: 'flex', flexFlow: 'column nowrap', '@media (max-width: 600px)': { order:10, padding: '40px 20px' }}}>
               <h2 style={styles.bioTitle}>
                 <i className="fa fa-music" />&nbsp;
                 Master of Ceremonies
@@ -58,9 +94,42 @@ class HomeView extends React.Component {
               style={{
                 display: 'flex',
                 flexFlow: 'row wrap',
+                padding: '0',
               }}
             >
-
+              {this.state.services.length ? this.state.services.map((service, sI) => (
+                <div key={`services-box-${sI}`} style={{
+                  flex: '0 0 auto',
+                  width: `${service.width}%`,
+                  margin: '0',
+                  background: `#${sI+1}${sI+1}${sI+1}`,
+                  borderRadius: 2,
+                  minHeight: 400,
+                  padding: 40,
+                  display: 'flex',
+                  flexFlow: 'column nowrap',
+                }}>
+                  <span style={{
+                    color: '#fff',
+                    fontWeight: '700',
+                    textTransform: 'uppercase',
+                    fontSize: '1.75em',
+                    margin: '0 auto 20px 0',
+                    }}
+                  >
+                    {service.name}
+                  </span>
+                  <p style={{
+                    color: '#eee',
+                    fontSize: '0.9em',
+                    fontWeight: 300,
+                    maxWidth: 800,
+                    margin: 'auto auto 0 0'
+                  }}>
+                    {service.description}
+                  </p>
+                </div>
+              )) : false}
             </div>
           </div>
         </div>

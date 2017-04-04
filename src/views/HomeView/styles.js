@@ -35,18 +35,22 @@ export default {
     display: 'none',
   },
   navbarItem: {
-    margin: 'auto 15px',
+    margin: 'auto 20px',
     color: '#444',
     fontSize: '0.9em',
     fontWeight: 700,
     letterSpacing: 2,
   },
   subNavbarItem: {
-    margin: 'auto 10px',
+    margin: 'auto 20px',
     color: '#888',
     fontSize: '0.85em',
     fontWeight: 300,
     letterSpacing: 1,
+    '@media (max-width: 600px)': {
+      fontSize: '0.8em',
+      margin: 'auto 15px',
+    }
   },
   shoutout: {
     background: '#000',
